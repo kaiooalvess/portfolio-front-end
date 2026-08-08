@@ -13,13 +13,22 @@ para adicionar o seu usuario do Github ao vs code, utilize os comandos abaixo:
 ## trabalahndo com repositorios 
 para inicializar o repositorio local:
 
-````git init``
+```git init```
 
 para trocar o nome do branch:
-````git branch -M main``
+```git branch -M main```
 para exibir status
-````git status``
+```git status``````
 para utilizar `main'como nome padrao da branch principal para novos repositorios:
-````git config --global init.defaultBranch main``
+```git config --global init.defaultBranch main```
 para limpar o termonal bash:
-````clear``
+```clear```
+adicionando uma commit ao repositorio:
+```git commit -m "Arquivos iniciais"```
+adicionando o repositorio remoto:
+```git remote add origin https://github.com/kaiooalvess/portfolio-front-end.git```
+
+
+para enviar os arquivos para o repositorio remoto:
+```git push origin <main>```
+onde <main> e o nome da branch onde estamos trabalhando
