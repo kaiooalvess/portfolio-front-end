@@ -37,3 +37,15 @@ Para atualizar os novos arquivos, a sequência de comandos será:
 ```git add .```
 ```git commit -m "Descrição da commit"```
 ```git push origin main```
+
+aumentar o tamanho do buffer para 500mb (global)
+```git config --global http.postBuffer 524288000```
+
+aumentar o tamanho do buffer para 500mb (apenaslocal)
+```git config http.postbuffer 524288000```
+
+verificar o tamanho do buffer atual:
+```git config --get http.postbuffer```
+
+Reset para configuracao padrao:
+```git config --global --unset http.postBuffer```
