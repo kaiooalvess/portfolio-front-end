@@ -1,0 +1,380 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ 
+ :root {
+     --primaria: #DCDCDC;
+     --secundaria: #808080;
+     --terciaria: #000000;
+     --branco: #fafafa;
+     --clara: #f5f5dc;
+     --transparente: #000000c0;
+ }
+ 
+ html {
+     scroll-behavior: smooth;
+ }
+ 
+ body {
+     background-color: #f5f5dc;
+ }
+ 
+ a {
+     text-decoration: none;
+     transition: 300ms;
+ }
+ 
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ li {
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ }
+ 
+ header {
+     width: 100%;
+     height: 6rem;
+     background-color: var(--clara);
+     .topbar {
+         width: 64rem;
+         height: 2rem;
+         margin: 0 auto;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         .social {
+             display: flex;
+             ul {
+                 display: flex;
+                 gap: 1rem;
+                 li {
+                     list-style-type: none;
+                 }
+             }
+         }
+     }
+     nav {
+         width: 100%;
+         height: 4rem;
+         background-color: var(--clara);
+         display: flex;
+         justify-content: center;
+         ul {
+             height: 4rem;
+             display: flex;
+             align-items: center;
+             li {
+                 list-style-type: none;
+                 a {
+                     height: 4rem;
+                     display: flex;
+                     align-items: center;
+                     padding: 0 1rem;
+                     color: var(--terciaria);
+                     text-transform: uppercase;
+                     &:hover {
+                         background-color: var(--secundaria);
+                         border-radius: 2rem;
+                     }
+                 }
+             }
+         }
+     }
+ }
+ 
+ #home,
+ #sobre {
+     width: 100%;
+     height: 80vh;
+     background-image: linear-gradient(#f5f5dc, #deb887);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     .conteudo {
+         width: 64rem;
+         margin: 0 auto;
+         display: flex;
+         align-self: center;
+         align-items: center;
+         .texto {
+             width: 50%;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             gap: 1rem;
+             h1 {
+                 font-size: 3rem;
+                 font-weight: 300;
+                 text-align: center;
+             }
+             h2 {
+                 font-size: 2rem;
+                 font-weight: 300;
+                 text-align: center;
+             }
+             .cta {
+                 display: flex;
+                 border: 1px solid #3f3fb7;
+                 border-radius: 0.5rem;
+                 text-align: center;
+                 width: 100%;
+                 height: 3rem;
+                 justify-content: center;
+                 align-items: center;
+                 font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                 background-color: #07070f;
+                 color: #f5f5dc;
+                 &:hover {
+                     border: 1px solid #efeff0;
+                     background-color: #787891;
+                     color: #e6e6ef;
+                 }
+             }
+         }
+         .foto {
+             width: 30rem;
+             height: 30rem;
+             background-color: grey;
+             border-radius: 50%;
+             overflow: hidden;
+             border: 5px solid white;
+             img {
+                 width: 100%;
+                 height: 100%;
+                 object-fit: cover;
+                 object-position: center;
+             }
+         }
+     }
+ }
+ 
+ body {
+     background-color: #deb887;
+ }
+ 
+ #trabalhos {
+     width: 100%;
+     .cards {
+         width: 64rem;
+         margin: 0 auto;
+         display: flex;
+         flex-wrap: wrap;
+         gap: 1rem;
+         .card {
+             width: 15.25rem;
+             border: 2px solid black;
+             padding: 1rem;
+             border-radius: 0.6rem;
+             background-color: #ecececec;
+             h3 {
+                 text-align: center;
+             }
+             .imagem {
+                 width: 100%;
+                 aspect-ratio: 1/1;
+                 background-color: #868686;
+                 overflow: hidden;
+             }
+             img {
+                 width: 100%;
+             }
+             .btn {
+                 width: 100%;
+                 height: 2rem;
+                 border: 1.5px solid #1b1b91;
+                 display: flex;
+                 justify-content: center;
+                 border-radius: 0.25rem;
+                 align-items: center;
+                 background-color: #1b1b91;
+                 color: #fafafafa;
+                 font-family: system-ui, sans-serif;
+                 box-shadow: 0 0 16px #1b1b91;
+                 &:hover {
+                     box-shadow: 0 0 8px #000000;
+                     background-color: #050608;
+                     color: #f5f5dc;
+                 }
+             }
+         }
+     }
+ }
+ 
+ #sobre {
+     background-image: linear-gradient(#deb887, #f5f5dc);
+     .conteudo {
+         flex-direction: row-reverse;
+         gap: 1rem;
+     }
+ }
+ 
+ #contatos {
+     background-color: #f5f5dc;
+     .conteudo {
+         width: 64rem;
+         margin: 0 auto;
+         display: flex;
+         flex-wrap: wrap;
+         padding: 4rem 0;
+         h2 {
+             width: 100%;
+             font-size: 2rem;
+             font-weight: 300;
+             text-align: center;
+             padding-bottom: 1rem;
+         }
+         .texto {
+             width: 50%;
+             display: flex;
+             flex-direction: column;
+             gap: 0.5rem;
+             a {
+                 font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                 color: var(--terciaria);
+                 text-decoration: none;
+                 display: flex;
+                 width: fit-content;
+                 padding: 0.5rem;
+                 background-color: var(--secundaria);
+                 border-radius: 2rem;
+                 gap: 0.5rem;
+                 color: var(--branco);
+             }
+         }
+         .formulario {
+             width: 50%;
+             form {
+                 width: 100%;
+                 gap: .25rem;
+                 display: flex;
+                 flex-direction: column;
+                 label {
+                     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                 }
+                 input[type="text"],
+                 input[type="email"],
+                 input[type="tel"] {
+                     width: 100%;
+                     height: 2rem;
+                     padding: 0 0.5rem;
+                     border-radius: 0.5rem;
+                     border: none;
+                 }
+                 textarea {
+                     width: 100%;
+                     height: 4rem;
+                     padding: 0 0.2rem;
+                     border-radius: 0.5rem;
+                     border: none;
+                 }
+                 .btns {
+                     width: 100%;
+                     display: flex;
+                     gap: .25rem;
+                     button {
+                         width: 50%;
+                         height: 2rem;
+                         border-radius: 1rem;
+                         border: none;
+                         background-color: var(--secundaria);
+                         color: #fafafa;
+                         cursor: pointer;
+                         &:hover {
+                             background-color: var(--terciaria);
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
+ 
+ footer {
+     width: 100%;
+     height: 4rem;
+     background-color: var(--clara);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     p {
+         color: var(--transparente);
+     }
+ }
+ 
+ .modal {
+     width: 100%;
+     height: 100dvh;
+     background-color: #000000c0;
+     position: fixed;
+     z-index: 20;
+     top: 0;
+     left: 0;
+     display: none;
+     .conteudo {
+         width: 42rem;
+         height: 32rem;
+         background-color: white;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         padding: 1rem;
+         border-radius: 1rem;
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 1rem;
+         cursor: pointer;
+         .foto {
+             width: 100%;
+             background-color: var(--secundaria);
+             grid-row: span 4;
+             grid-column: span 2;
+         }
+         .fechar {
+             width: 2rem;
+             height: 2rem;
+             position: absolute;
+             top: -1rem;
+             right: -1rem;
+             background-color: red;
+             border-radius: 50%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             font-size: 1.75rem;
+             color: white;
+             border: 2px solid black;
+             cursor: pointer;
+         }
+     }
+ }
+ /*
+ .formulario textarea {
+     font-weight: 700;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ }
+ */
+ /*
+ .letra {
+     background: linear-gradient(to right, red, blue, purple, red);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-size: 300% auto;
+     animation: animar 5s linear infinite;
+ }
+ 
+ @keyframes animar {
+     form {
+         background-position: 0%;
+     }
+     to {
+         background-position: 300%;
+     }
+ }
+ */
