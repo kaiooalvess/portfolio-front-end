@@ -49,3 +49,6 @@ verificar o tamanho do buffer atual:
 
 Reset para configuracao padrao:
 ```git config --global --unset http.postBuffer```
+
+reset completo do repositorio local 
+```rm -rf .gti```
