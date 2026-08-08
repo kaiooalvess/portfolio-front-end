@@ -32,3 +32,8 @@ adicionando o repositorio remoto:
 para enviar os arquivos para o repositorio remoto:
 ```git push origin <main>```
 onde <main> e o nome da branch onde estamos trabalhando
+
+Para atualizar os novos arquivos, a sequência de comandos será:
+```git add .```
+```git commit -m "Descrição da commit"```
+```git push origin main```
