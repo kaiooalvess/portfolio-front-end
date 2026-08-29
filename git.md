@@ -10,7 +10,7 @@ para adicionar o seu usuario do Github ao vs code, utilize os comandos abaixo:
 *para adcionar email do usuario*
 ```git config --global user.email "kaioalves6rt@gmail.com"```
 
-## trabalahndo com repositorios 
+## trabalhando com repositorios 
 para inicializar o repositorio local:
 
 ```git init```
