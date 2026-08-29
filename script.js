@@ -1,61 +1,147 @@
-/*function trocarCor() {
+// Base de dados dos seus projetos reais
+const meusProjetos = [
+    {
+        id: 1,
+        titulo: "Página de Detalhes - Nike Air Jordan",
+        imagem: "img/nike.png",
+        descricao: "Página de detalhes de produto com design moderno e focado na experiência de compra da linha Nike Air Jordan.",
+        github: "https://github.com/kaiooalvess/nike-air-jordan-detalhes",
+        demo: "https://kaiooalvess.github.io/nike-air-jordan-detalhes/"
+    },
+    {
+        id: 2,
+        titulo: "Portfólio Kaio Alves",
+        imagem: "img/portifolio.png",
+        descricao: "Template de portfólio moderno para Web Developer com interface Dark Mode construído com HTML5 e CSS3 puro.",
+        github: "https://github.com/kaiooalvess/kaio-alves-portfolio",
+        demo: "https://kaiooalvess.github.io/kaio-alves-portfolio/"
+    },
+    {
+        id: 3,
+        titulo: "Lista de Tarefas",
+        imagem: "img/lista.png",
+        descricao: "Aplicação interativa para organização e acompanhamento de tarefas com título, status e descrição detalhada.",
+        github: "https://github.com/kaiooalvess/Lista-de-Tarefas",
+        demo: "https://kaiooalvess.github.io/Lista-de-Tarefas/"
+    },
+    {
+        id: 4,
+        titulo: "Music Player",
+        imagem: "img/music.png",
+        descricao: "Player de áudio dinâmico e responsivo projetado para reprodução de músicas e audição offline.",
+        github: "https://github.com/kaiooalvess/music-Player",
+        demo: "https://kaiooalvess.github.io/music-Player/"
+    }
+];
 
-    let cores = [
-        "red",
-        "black",
-        "green",
-        "pink",
-        "orange",
-        "white",
-        "blue",
-    ]
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.querySelector('.modal');
+    const modalConteudo = document.querySelector('.modal .conteudo');
+    const fechar = document.querySelector('.modal .fechar');
+    const modalTitulo = document.querySelector('.modal h2');
+    const modalTexto = document.querySelector('.modal p');
+    const cards = document.querySelectorAll('.card');
 
-    let numero = Math.floor(Math.random() * cores.length)
-    let botao = document.getElementById("enviar")
-    botao.style.backgroundColor = cores[numero]
-    botao.style.transition = "0.5s"
-}
+    // 1. Preenche os dados e imagens diretamente nos Cards da tela principal
+    cards.forEach((card, index) => {
+        const projeto = meusProjetos[index];
+        if (!projeto) return;
 
-function trocarCorlimpar() {
+        // Atualiza Título do Card
+        const tituloCard = card.querySelector('h3');
+        if (tituloCard) tituloCard.textContent = projeto.titulo;
 
-    let cores = [
-        "red",
-        "black",
-        "green",
-        "pink",
-        "orange",
-        "white",
-        "blue",
-    ]
+        // Atualiza Descrição do Card
+        const textoCard = card.querySelector('p');
+        if (textoCard) textoCard.textContent = projeto.descricao;
 
-    let numero = Math.floor(Math.random() * cores.length)
-    let botao = document.getElementById("limpar")
-    botao.style.backgroundColor = cores[numero]
-    botao.style.transition = "0.5s"
-}
-*/
+        // Atualiza/Cria Imagem do Card
+        const containerImg = card.querySelector('.imagem');
+        if (containerImg) {
+            let imgCard = containerImg.querySelector('img');
+            if (!imgCard) {
+                imgCard = document.createElement('img');
+                containerImg.appendChild(imgCard);
+            }
+            imgCard.src = projeto.imagem;
+            imgCard.alt = projeto.titulo;
+        }
+    });
 
-const modal = document.querySelector('.modal')
-const botoes = document.querySelectorAll('#trabalhos .btn')
-const fechar = document.querySelector('.fechar')
+    // 2. Prepara os containers da foto e botões dentro da Modal
+    let modalFotoContainer = document.querySelector('.modal .foto');
+    if (!modalFotoContainer && modalConteudo) {
+        modalFotoContainer = document.createElement('div');
+        modalFotoContainer.className = 'foto';
+        const novaImg = document.createElement('img');
+        modalFotoContainer.appendChild(novaImg);
+        modalConteudo.insertBefore(modalFotoContainer, modalConteudo.firstChild);
+    }
 
-console.log(modal)
+    let acoesModal = document.querySelector('.modal-acoes');
+    if (modalConteudo && !acoesModal) {
+        acoesModal = document.createElement('div');
+        acoesModal.className = 'modal-acoes';
+        modalConteudo.appendChild(acoesModal);
+    }
 
-function abrirModal(trabalhoNum) {
-    modal.style.display = 'flex'
-    document.body.style.overflow = 'hidden'
-}
+    // 3. Função para abrir a Modal preenchida com o projeto correto
+    function abrirModal(index) {
+        const projeto = meusProjetos[index] || meusProjetos[0];
 
-function fecharModal() {
-    modal.style.display = 'none'
-    document.body.style.overflow = ''
+        const imgElement = document.querySelector('.modal .foto img');
+        if (imgElement) {
+            imgElement.src = projeto.imagem;
+            imgElement.alt = projeto.titulo;
+        }
 
-}
-botoes.forEach(function(botao, i) {
-    botao.addEventListener('click', function(evento) {
-        evento.preventDefault()
-        abrirModal(i)
-    })
+        if (modalTitulo) modalTitulo.textContent = projeto.titulo;
+        if (modalTexto) modalTexto.textContent = projeto.descricao;
 
-})
-fechar.addEventListener('click', fecharModal)
+        if (acoesModal) {
+            acoesModal.innerHTML = `
+                <a href="${projeto.demo}" target="_blank" rel="noopener noreferrer" class="btn-modal-link btn-demo">
+                    <i class="ph ph-desktop"></i> Ver Landing Page
+                </a>
+                <a href="${projeto.github}" target="_blank" rel="noopener noreferrer" class="btn-modal-link btn-github">
+                    <i class="ph ph-github-logo"></i> Código no GitHub
+                </a>
+            `;
+        }
+
+        if (modal) {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    // 4. Função para fechar a Modal
+    function fecharModal() {
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    }
+
+    // 5. Adiciona evento de clique em todos os botões dos cards
+    cards.forEach((card, index) => {
+        const btn = card.querySelector('.btn');
+        if (btn) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                abrirModal(index);
+            });
+        }
+    });
+
+    // 6. Fechamento do Modal via botão X ou clique fora
+    if (fechar) {
+        fechar.addEventListener('click', fecharModal);
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            fecharModal();
+        }
+    });
+});
