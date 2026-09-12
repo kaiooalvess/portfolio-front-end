@@ -64,6 +64,15 @@ const meusProjetos = [
         github: "https://github.com/kaiooalvess/Calculadora-Simples",
         demo: "https://kaiooalvess.github.io/Calculadora-Simples/"
     }
+    ,
+    {
+        id: 4,
+        titulo: "Catalogo De Materiais",
+        imagem: "img/catalogo.png",
+        descricao: "Sistema para visualizar e organizar materiais elétricos, com informações como nome, marca, preço, descrição e imagem dos produtos, facilitando a consulta e localização dos itens.",
+        github: "https://github.com/kaiooalvess/catalogo-materiais-eletricos",
+        demo: "https://kaiooalvess.github.io/catalogo-materiais-eletricos/"
+    }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
