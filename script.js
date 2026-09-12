@@ -69,9 +69,9 @@ const meusProjetos = [
         id: 4,
         titulo: "Catalogo De Materiais",
         imagem: "img/catalogo.png",
-        descricao: "Sistema para visualizar e organizar materiais elétricos, com informações como nome, marca, preço, descrição e imagem dos produtos, facilitando a consulta e localização dos itens.",
-        github: "https://github.com/kaiooalvess/catalogo-materiais-eletricos",
-        demo: "https://kaiooalvess.github.io/catalogo-materiais-eletricos/"
+        descricao: "⚡ Site profissional e responsivo para catálogo de materiais elétricos, desenvolvido com HTML, CSS e JavaScript, com design moderno, banners, animações e apresentação organizada dos produtos.",
+        github: "https://github.com/kaiooalvess/Cat-logo-de-Materiais-El-tricos",
+        demo: "https://kaiooalvess.github.io/Cat-logo-de-Materiais-El-tricos/"
     }
 ];
 
