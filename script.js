@@ -32,6 +32,38 @@ const meusProjetos = [
         github: "https://github.com/kaiooalvess/music-Player",
         demo: "https://kaiooalvess.github.io/music-Player/"
     }
+    , {
+        id: 4,
+        titulo: "Mercado livre",
+        imagem: "img/mercado livre.png",
+        descricao: "Réplica do Mercado Livre desenvolvida para fins educacionais, simulando uma plataforma de marketplace com catálogo de produtos, busca, carrinho e interface de compra.",
+        github: "https://github.com/kaiooalvess/E-commerce-Marketplace-R-plica-do-Mercado-Livre",
+        demo: "https://kaiooalvess.github.io/E-commerce-Marketplace-R-plica-do-Mercado-Livre/"
+    }
+    , {
+        id: 4,
+        titulo: "Cartaz de Progura-se",
+        imagem: "img/progura-se.png",
+        descricao: "Cartaz informativo criado para divulgar a procura por uma pessoa, animal ou objeto, reunindo informações importantes para facilitar a identificação e o contato.",
+        github: "https://github.com/kaiooalvess/Cartaz-de-Procura-se",
+        demo: "https://kaiooalvess.github.io/Cartaz-de-Procura-se/"
+    },
+    {
+        id: 4,
+        titulo: "Link-Bio",
+        imagem: "img/link-bio.png",
+        descricao: "Página personalizada para reunir meus principais links de contato e redes sociais em um só lugar, facilitando o acesso às minhas informações e formas de contato.",
+        github: "https://github.com/kaiooalvess/Link-Bio",
+        demo: "https://kaiooalvess.github.io/Link-Bio/"
+    },
+    {
+        id: 4,
+        titulo: "Calculadora",
+        imagem: "img/calculadora.png",
+        descricao: "Software básico para realizar cálculos matemáticos de forma rápida e fácil, permitindo operações como adição, subtração, multiplicação e divisão.",
+        github: "https://github.com/kaiooalvess/Calculadora-Simples",
+        demo: "https://kaiooalvess.github.io/Calculadora-Simples/"
+    }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
